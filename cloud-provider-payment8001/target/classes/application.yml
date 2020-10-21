@@ -14,3 +14,10 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.zl.pojo #所有entity别名类所在包
+
+eureka:
+  client:
+    register-with-eureka: true #表示将自己注册进EurekaServer
+    fetch-registry: true #从EurekaServer抓取已有注册信息，单节点无所谓，集群必须true才能配合ribbon使用负载均衡
+    service-url:
+      defaultZone: http://localhost:7001/eureka
