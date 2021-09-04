@@ -37,4 +37,21 @@ public class PaymentController {
             return new CommonResult(444, "查询失败", null);
         }
     }
+
+    @GetMapping("/payment/serverPort")
+    public String getServerPort() {
+        return serverPort;
+    }
+
+
+    @GetMapping("/payment/feignTimeOut")
+    public String feignTimeOut() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
+    }
+
 }
